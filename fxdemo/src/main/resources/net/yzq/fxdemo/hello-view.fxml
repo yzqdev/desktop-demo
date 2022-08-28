@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="net.yzq.fxdemo.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+
+    <Label fx:id="welcomeText" />
+
+    <Button onAction="#onHelloButtonClick" text="Hello!" />
+    <HBox fx:id="hbType" prefHeight="40" prefWidth="400">
+        <Label fx:id="labelType" prefHeight="40" prefWidth="120" text="登录类型：" />
+        <RadioButton fx:id="rbPassword" prefHeight="40" prefWidth="140" selected="true" text="密码登录">
+         <toggleGroup>
+            <ToggleGroup fx:id="tgType" />
+         </toggleGroup></RadioButton>
+        <RadioButton fx:id="rbVerifycode" prefHeight="40" prefWidth="140" text="验证码登录" toggleGroup="$tgType" />
+        <fx:define>
+            <ToggleGroup fx:id="tgType" />
+        </fx:define>
+    </HBox>
+</VBox>
